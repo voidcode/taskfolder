@@ -4,30 +4,52 @@
 #include <string.h>
 
 #define APP ((char *)"evince")
-#define ROOTFOLDER ((char *)"./")
-int main()
+
+int detect_spaceing(char s[])
 {
-	char *
+	int i;
+	for(i=0; i < sizeof(s); i++)
+		if(s[i] == ' ')
+			 return 1;
+	return 0;
+}
+int main(int argc, char *argv[])
+{
+	char *ROOTFOLDER;
+	int ARGUMENTS_IS_ADDED=0;
+	if(argv[1] != NULL)
+	{
+		ROOTFOLDER = malloc(strlen(argv[1]));
+		strcat(ROOTFOLDER, argv[1]);
+		printf("\nROOTFOLDER==%s\n", ROOTFOLDER);
+		ARGUMENTS_IS_ADDED =1;
+	}
+	else /* if argument 1 is not set then, open any pdf in 'taskfolder' current root  */
+	{
+		ROOTFOLDER = malloc(strlen("./"));
+		strcat(ROOTFOLDER, "./");
+	}
 	DIR *d;
 	struct dirent *dir;
 	char *ext;
 	d = opendir(ROOTFOLDER);
 	if(d)
 	{
-		char *chunk_arr[];
 		char *cmd = malloc(1);
 		strcat(cmd, APP);
 		while((dir = readdir(d)) != NULL)
-		{
-			ext = strchr(dir->d_name, '.');
-			for(int i=0; i < 0; i++)
+		{			
+			if(detect_spaceing(dir->d_name) == 0)
 			{
+				ext = strchr(dir->d_name, '.');
 				if((ext != NULL) && (ext != 0) && (strcmp(ext, ".pdf") == 0))
 				{
-					cmd = realloc(cmd, strlen(cmd)+strlen(ROOTFOLDER)+strlen(dir->d_name)+1);
+					cmd = realloc(cmd, strlen(cmd)+strlen(ROOTFOLDER)+strlen(dir->d_name)+2);
 					strcat(cmd, " ");
 					strcat(cmd, ROOTFOLDER);
-				  	strcat(cmd, dir->d_name);
+					if(ARGUMENTS_IS_ADDED == 1)
+						strcat(cmd, "/");
+					strcat(cmd, dir->d_name);
 				}
 			}
 		}
@@ -35,6 +57,7 @@ int main()
 		printf("\nrun:\n%s\n", cmd);
 		system(cmd);
 		free(cmd);
+		free(ROOTFOLDER);
 	}
 	return 0;
 }

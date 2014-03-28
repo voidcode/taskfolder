@@ -10,7 +10,7 @@ OPEN ALL PDF-FILE IN IN THE CURRENT ROOTFOLDER
 ./taskfolder
 ```
 
-To the the custom root-folder, just do like below!
+Use custom root-folder. Try like below!
 
 ```
 BY RELATIV PATH

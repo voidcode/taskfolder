@@ -26,9 +26,8 @@ OR BY THE ABSOLUTE PATH.
 
 ```
 
-With Ubuntu you can use the 'Startup Applications'-app.
+On Ubuntu you can use the 'Startup Applications'-app.
 
-
-To open any pdf startup, from say your '/home/user/documents/Taskfolder'
+To open any pdf on-startup. from say your '/home/user/documents/Taskfolder.
 
 ![Startup Applications on Ubuntu](https://raw.githubusercontent.com/voidcode/taskfolder/master/images/1.png) 

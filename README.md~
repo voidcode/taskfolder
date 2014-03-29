@@ -13,14 +13,11 @@ OPEN ALL PDF-FILE IN IN THE CURRENT ROOTFOLDER
 Use custom root-folder. Try like below!
 
 ```
-BY RELATIV PATH.
+BY RELATIV PATH
 
 ./taskfolder ./pdf/
-```
 
-
-```
-OR BY THE ABSOLUTE PATH.
+OR BY THE ABSOLUTE PATH
 
 ./taskfolder /home/youruser/path/to/pdfs/
 

@@ -25,3 +25,12 @@ OR BY THE ABSOLUTE PATH.
 ./taskfolder /home/youruser/path/to/pdfs/
 
 ```
+
+With Ubuntu you can use the 'Startup Applications'-app.
+
+
+To open any file from, say your '/home/user/documents/Taskfolder'.
+
+On startup.
+
+![Alt "Startup Applications "](https://github.com/voidcode/taskfolder/blob/master/images/1.png)

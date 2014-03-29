@@ -26,7 +26,6 @@ int main(int argc, char *argv[])
 	int ARGUMENTS_IS_ADDED=0;
 	if(argv[1] != NULL)
 	{
-				
 		ROOTFOLDER = malloc(strlen(argv[1]));
 		strcat(ROOTFOLDER, argv[1]);
 		printf("\nROOTFOLDER==%s\n", ROOTFOLDER);
